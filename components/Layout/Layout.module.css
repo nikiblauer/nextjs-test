@@ -1,0 +1,19 @@
+.navbar {
+  background-color: #7d9d9c;
+
+  width: 100%;
+  height: 80px;
+}
+
+.heading {
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+.footer {
+  background-color: #576F72;
+
+  width: 100%;
+  height: 200px;
+}

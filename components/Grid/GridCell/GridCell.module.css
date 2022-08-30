@@ -1,0 +1,27 @@
+
+
+.cell {
+    width: 275px;
+    height: 275px;
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 3px;
+
+}
+
+.cell_img {
+    background-color: lightgray;
+    border-radius: 3px;
+
+}
+
+
+.cell_img:hover {
+    -webkit-filter: brightness(50%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
