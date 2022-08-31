@@ -1,27 +1,49 @@
-
-
 .cell {
-    width: 275px;
-    height: 275px;
+  position: relative;
+  width: 275px;
+  height: 275px;
 
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 3px;
-
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 3px;
 }
 
 .cell_img {
-    background-color: lightgray;
-    border-radius: 3px;
-
+  background-color: lightgray;
+  border-radius: 3px;
 }
 
+.cell_title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 1.5rem;
+  opacity: 0;
 
-.cell_img:hover {
-    -webkit-filter: brightness(50%);
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+  transform: translate(-50%, -50%);
+  color: #fff;
 }
 
+@keyframes blendTitle {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.cell:hover .cell_title {
+  animation-name: blendTitle;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.cell:hover .cell_img {
+  -webkit-filter: brightness(50%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}

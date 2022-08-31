@@ -1,15 +1,31 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
+import GridCell from "../components/Grid/GridCell/GridCell";
+import Grid from "../components/Grid/Grid";
+import { getProducts } from "../lib/products";
 
-import GridCell from '../components/Grid/GridCell/GridCell'
-import Grid from '../components/Grid/Grid'
-
-export default function Home() {
+export default function Home({ products }) {
   return (
     <div>
-      <Grid />
+      <Grid>
+        {products.map((product, index) => {
+          return (
+            <GridCell key={index} title={product.title} imgSrc={product.img} />
+          );
+        })}
+      </Grid>
     </div>
-  )
+  );
+}
+
+export async function getStaticProps() {
+  const products = getProducts();
+
+  return {
+    props: {
+      products,
+    },
+  };
 }
