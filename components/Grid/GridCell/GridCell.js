@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./GridCell.module.css";
 
-export default function GridCell({ title, imgSrc }) {
+export default function GridCell({ title, imgSrc, href }) {
   return (
-    <>
+    <Link href={href}>
       <div className={styles.cell}>
         <Image
           className={`${styles.cell_img} ${styles.curtain}`}
@@ -16,9 +17,9 @@ export default function GridCell({ title, imgSrc }) {
           }
           priority
           alt=""
-        />
+        ></Image>
         <h3 className={styles.cell_title}>{title}</h3>
       </div>
-    </>
+    </Link>
   );
 }

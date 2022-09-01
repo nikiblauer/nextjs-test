@@ -12,7 +12,12 @@ export default function Home({ products }) {
       <Grid>
         {products.map((product, index) => {
           return (
-            <GridCell key={index} title={product.title} imgSrc={product.img} />
+            <GridCell
+              key={index}
+              title={product.title}
+              imgSrc={product.img}
+              href={`/products/${product.fileName}`}
+            />
           );
         })}
       </Grid>
